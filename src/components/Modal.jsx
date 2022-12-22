@@ -15,6 +15,9 @@ const  close=(e)=>{
     useEffect(()=>{
         window.addEventListener('keydown',close);
         document.querySelector('.Overlay').addEventListener('click',clickClose);
+        return ()=>{
+          window.removeEventListener('keydown',close);
+        }
     })
     return <div className="Overlay">
               <div className="Modal">
